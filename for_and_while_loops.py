@@ -90,6 +90,7 @@ for i in range(a):
 print(total)
 
 from math import *
+from sys import flags
 a = int(input())
 total = 0
 if a == 1:
@@ -166,4 +167,204 @@ for i in range(1, a + 1):
     b = total
     total = b + totyl
     totyl = b
-    print(b, end=' ')
+    print(b, end=' ') 
+
+a = input()
+while a != 'КОНЕЦ':
+    print(a)
+    a = input()
+
+a = input()
+while a != 'КОНЕЦ' and a != 'конец':
+    print(a)
+    a = input()
+
+a = input()
+total = 0
+while a != 'стоп' and a != 'хватит' and a != 'достаточно':
+    total += 1
+    a = input()
+print(total)
+
+a = int(input())
+while a  % 7 == 0:
+    print(a)
+    a = int(input())
+
+a = int(input())
+total = 0
+while 0 <= a < 6:
+    if a == 5:
+        total += 1
+    a = int(input())
+print(total)
+
+a = int(input())
+total = 0
+while 0 < a:
+    if a >= 25:
+        a -= 25
+        total += 1
+    elif a >= 10:
+        a -= 10
+        total += 1
+    elif a >= 5:
+        a -= 5
+        total += 1
+    else:
+        a -= 1
+        total += 1
+print(total)
+
+a = int(input())
+while a != 0:
+    last_number = a % 10
+    print(last_number)
+    a = a // 10
+
+a = int(input())
+while a != 0:
+    last_number = a % 10
+    print(last_number, end='')
+    a = a // 10
+
+a = int(input())
+max = 0
+min = 9
+while a != 0:
+    last_number = a % 10
+    if max < last_number:
+        max = last_number
+    if min > last_number:
+        min = last_number
+    a //= 10
+print('Максимальная цифра равна', max)
+print('Минимальная цифра равна', min)
+
+a = int(input())
+sum = 0
+kol = 0
+proiz = 1
+sumfl = a % 10
+while a != 0:
+    last_number = a % 10
+    sum += last_number
+    kol += 1
+    proiz *= last_number
+    a //= 10
+print(sum)
+print(kol)
+print(proiz)
+print(sum / kol)
+print(last_number)
+print(last_number + sumfl)
+
+a = input()
+print(a[1])
+
+a = int(input())
+max = 0
+min = 9
+while a != 0:
+    last_number = a % 10
+    if max < last_number:
+        max = last_number
+    if min > last_number:
+        min = last_number
+    a //= 10
+if max == min:
+    print('YES')
+else:
+    print('NO')
+
+a = int(input())
+b = a // 10
+flags = 'YES'
+while a > 10:
+    alast_number = a % 10
+    blast_number = b % 10
+    if alast_number > blast_number:
+        flags = 'NO'
+    a = a // 10
+    b = b // 10
+print(flags)
+
+a = int(input())
+b = 2
+while b <= a :
+    if a % b == 0:
+        print(b)
+        break
+    b += 1
+
+a = int(input())
+for i in range(1, a + 1):
+    if 4 < i < 10:
+        continue
+    elif 16 < i < 38:
+        continue
+    elif 77 < i < 88:
+        continue
+    else:
+        print(i)
+
+from math import *
+count = 0
+p = 1
+for i in range(10):
+    x = int(input())
+    if x >= 0:
+        p = p * x
+        count = count + 1
+if count > 0:
+    print(count)
+    print(p)
+else:
+    print('NO')
+
+mx = -10 ** 6
+s = 0
+for i in range(10):
+    x = int(input())
+    if x < 0:
+        s += x
+        if x > mx:
+            mx = x
+if s < 0:
+    print(s)
+    print(mx)
+else:
+    print('NO')
+
+s = 0
+for i in range(7):
+    n = int(input())
+    if n % 2 == 0:
+        s += n
+print(s)
+
+n = int(input())
+max_digit = -1
+while n > 0:
+    digit = n % 10
+    if digit % 3 == 0:
+        if digit > max_digit:
+            max_digit = digit
+    n = n // 10
+if max_digit == -1:
+    print('NO')
+else:
+    print(max_digit)
+
+n = int(input())
+while n > 9:
+    n //= 10
+print(n)
+
+n = int(input())
+product = 1
+while n > 0:
+    digit = n % 10
+    product = product * digit
+    n //= 10
+print(product)
