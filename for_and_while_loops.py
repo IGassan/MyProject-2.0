@@ -1,4 +1,4 @@
-""" for i in range(10):
+for i in range(10):
     print('Python is awesome!')
 
 a = input()
@@ -483,13 +483,13 @@ x = int(input())
 total = 0
 for i in range(1, x + 1):
     total += factorial(i)
-print(total) """
+print(total)
 
 x = int(input())
 y = int(input())
 total = 0
 for i in range(x, y + 1):
-    for j in (1, i + 1):
+    for j in range(1, i + 1):
         if i % j == 0:
             total += 1
     if total == 2:
