@@ -1,4 +1,4 @@
-for i in range(10):
+""" for i in range(10):
     print('Python is awesome!')
 
 a = input()
@@ -368,3 +368,130 @@ while n > 0:
     product = product * digit
     n //= 10
 print(product)
+
+x = int(input())
+for i in range(x):
+    for j in range(3):
+        print(x, end=' ')
+    print()
+
+x = int(input())
+for i in range(1, x + 1):
+    for j in range(5):
+        print(i, end=' ')
+    print()
+
+x = int(input())
+for i in range(1, x + 1):
+    for j in range(1, 10):
+        print(i, '+', j, '=', i + j)
+    print()
+
+x = int(input())
+for i in range(x // 2 + 1):
+    for j in range(i + 1):
+        print('*', end='')
+    print()
+for i in range(x // 2 - 1, -1, -1):
+    for j in range(i + 1):
+        print('*', end='')
+    print()
+
+x = int(input())
+for i in range(1, x + 1):
+    for j in range(i):
+        print(i, end='')
+    print()
+
+for i in range(1, 15):
+    for j in range(1, 15):
+        for k in range(1, 15):
+            if 28 * i + 30 * j + 31 * k == 365:
+                print('n', i, 'k', j, 'm', k)
+
+for i in range(1, 100):
+    for j in range(1, 100):
+        for k in range(1, 100):
+            if i + j + k == 100 and 10 * i + 5 * j + 0.5 * k == 100:
+                print(i, j , k)
+
+x = int(input())
+total = 0
+for i in range(1, x + 1):
+    for j in range(i):
+        total += 1
+        print(total, end=' ')
+    print()
+
+x = int(input())
+for i in range(1, x + 1):
+    for j in range(i):
+        print(j + 1, end='')
+    for k in range(i -1, 0, -1):
+        print(k, end='')
+    print()
+
+x = int(input())
+y = int(input())
+total = 0
+max_total = 0
+numb_total = 0
+for i in range(x, y + 1):
+    for j in range(1, i + 1):
+        if i % j == 0:
+            total += j
+    if total >= max_total:
+        max_total = total
+        numb_total = i
+    total = 0
+print(numb_total, max_total)
+
+x = int(input())
+total = 0
+for i in range(1, x + 1):
+    for j in range(1, i + 1):
+        if i % j == 0:
+            total += 1
+    print(i, '+' * total, sep='')
+    total = 0
+
+x = int(input())
+total = 0
+totol = 0
+while x > 0:
+    total += x % 10
+    x //= 10
+while total > 0:
+    totol += total % 10
+    total //= 10
+if totol > 9:
+    print(totol // 10 + totol % 10 )
+else:
+    print(totol)
+
+x = int(input())
+total = 0
+for i in range(1, x + 1):
+    for j in range(1, i + 1):
+        if i % j == 0:
+            total += 1
+    print(i, '+' * total, sep='')
+    total = 0
+
+from math import *
+x = int(input())
+total = 0
+for i in range(1, x + 1):
+    total += factorial(i)
+print(total) """
+
+x = int(input())
+y = int(input())
+total = 0
+for i in range(x, y + 1):
+    for j in (1, i + 1):
+        if i % j == 0:
+            total += 1
+    if total == 2:
+        print(i)
+    total = 0
