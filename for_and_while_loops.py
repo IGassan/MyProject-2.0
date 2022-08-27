@@ -495,3 +495,87 @@ for i in range(x, y + 1):
     if total == 2:
         print(i)
     total = 0
+
+# Итоговая работа
+
+n = int(input())
+s = 0
+while n > 0:
+    last_number = n % 10
+    if last_number % 2 == 0:
+        s += last_number
+    n //= 10
+print(s)
+
+n = 8
+count = 0
+maximum = - 10 ** 12
+for i in range(n):
+    x = int(input())
+    if x % 4 == 0:
+        count += 1
+        if x > maximum:
+            maximum = x
+if count > 0:
+    print(count)
+    print(maximum)
+else:
+    print('NO')
+
+n = 4
+count = 0
+maximum = - 10 ** 8
+for i in range(1, n + 1):
+    x = int(input())
+    if x % 2 != 0:
+        count += 1
+        if x > maximum:
+            maximum = x
+if count > 0:
+    print(count)
+    print(maximum)
+else:
+    print('NO')
+
+x = int(input())
+for i in range(1, x + 1):
+    if i == 1 or i == x:
+        print('*' * 19)
+    else:
+        print('*' + ' ' * 17 + '*')
+
+x = int(input())
+while x > 99:
+    last_number = x % 10
+    x //= 10
+print(last_number)
+
+x = int(input())
+numb_3 = 0
+lust_number = 0
+chetnumber = 0
+sum_5 = 0
+proiz = 1
+number_0_5 = 0
+posled = x % 10
+while x != 0:
+    last_number = x % 10
+    if last_number == 3:
+        numb_3 += 1
+    if last_number == posled:
+        lust_number += 1
+    if last_number % 2 == 0:
+        chetnumber += 1
+    if last_number > 5:
+        sum_5 += last_number
+    if last_number > 7:
+        proiz *= last_number
+    if last_number == 0 or last_number == 5:
+        number_0_5 += 1
+    x //= 10
+print(numb_3)
+print(lust_number)
+print(chetnumber)
+print(sum_5)
+print(proiz)
+print(number_0_5)
