@@ -309,3 +309,34 @@ for i in range(n - 1):
     if flag:
         break
 print(a)
+
+# Итоговая работа
+
+print([i for i in range(2, int(input()) + 1, 2)])
+
+lst_1 = [int(i) for i in input().split()]
+lst_2 = [int(i) for i in input().split()]
+lst_3 = list()
+for i in range(len(lst_1)):
+    lst_3.append(lst_1[i] + lst_2[i])
+print(*lst_3)
+
+lst_1 = [int(i) for i in input().split()]
+print(*lst_1, sep='+', end='')
+print('=',sum(lst_1), sep='')
+
+a = input()
+flag = 'NO'
+if a[:2] == '7-':
+    a = a[2:]
+if a[3] == '-' and a[7] == '-':
+    a = a.replace('-','')
+    if a.isdigit():
+        flag = 'YES'
+print(flag)
+
+lst_1 = [len(i) for i in input().split()]
+print(max(lst_1))
+
+lst_1 = [i[1:] + i[0] + 'ки' for i in input().split()]
+print(*lst_1)
