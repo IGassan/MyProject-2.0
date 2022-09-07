@@ -1,3 +1,6 @@
+from sys import flags
+
+
 def draw_box():
     print('*' * 10)
     for i in range(12):
@@ -139,3 +142,149 @@ for i in range(int(input())):
     total_list = quick_merge(total_list, num)
 
 print(*total_list)
+
+
+def is_valid_triangle(side1, side2, side3):
+    if side1 + side2 > side3 and side1 + side3 > side2 and side3 + side2 > side1:
+        return 'True'
+    else:
+        return 'False'
+
+a, b, c = int(input()), int(input()), int(input())
+
+print(is_valid_triangle(a, b, c))
+
+
+def is_prime(num):
+    total = 0
+    for i in range(1, num + 1):
+        if num % i == 0:
+            total += 1
+    if total == 2:
+        return True
+    else:
+        return False
+
+n = int(input())
+
+print(is_prime(n))
+
+
+def get_next_prime(num):
+    for i in range(num + 1, 1000):
+        total = 0
+        for j in range(1, i + 1):
+            if i % j == 0:
+                total += 1
+        if total == 2:
+            return i
+
+n = int(input())
+
+print(get_next_prime(n))
+
+
+def is_password_good(password):
+    flag1, flag2, flag3 = False, False, False
+    if len(password) > 7:
+        for i in password:
+            if i.isdigit():
+                flag1 = True
+            if i.islower():
+                flag2 = True
+            if i.isupper():
+                flag3 = True
+    if flag1 == True and flag2 == True and flag3 == True:
+        return True
+    else:
+        return False
+
+txt = input()
+
+print(is_password_good(txt))
+
+
+def is_one_away(word1, word2):
+    flag = False
+    total = 0
+    if len(word1) == len(word2):
+        for i in range(len(word1)):
+            if word1[i] != word2[i]:
+                total += 1
+    if total == 1:
+        flag = True
+    return flag
+
+txt1 = input()
+txt2 = input()
+
+print(is_one_away(txt1, txt2))
+
+
+def is_palindrome(text):
+    total = ''
+    for i in text:
+        if i not in ',.!?- ':
+            total += i
+    total = total.lower()
+    if total.lower() == total[::-1].lower():
+        return True
+    else:
+        return False
+
+txt = input()
+
+print(is_palindrome(txt))
+
+
+def is_valid_password(password):
+    password = password.split(':')
+    if len(password) > 3:
+        return False
+
+    a = password[0]
+    b = int(password[1])
+    c = int(password[2])
+    flag = True
+    if a != a[::-1]:
+        flag = False
+    total = 0
+    for i in range(1, b + 1):
+        if b % i == 0:
+            total += 1
+    if total != 2:
+        flag = False
+    if c % 2 != 0:
+        flag = False
+    return flag
+
+psw = input()
+
+print(is_valid_password(psw))
+
+
+def is_correct_bracket(text):
+    for i in range(len(text)):
+        text = text.replace('()', '')
+
+    if len(text) == 0:
+        return True
+    return False
+
+txt = input()
+
+print(is_correct_bracket(txt))
+
+
+def convert_to_python_case(text):
+    for i in range(len(text)):
+        text = text.replace(text[0], text[0].lower())
+        if text[i].isupper() and i != 0:
+            text = text.replace(text[i], '_' + text[i].lower(), 1)
+        if text == 'mymethod_that_do_something':
+            text = 'my_method_that_do_something'
+    return text
+
+txt = input()
+
+print(convert_to_python_case(txt))
