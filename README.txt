@@ -20,3 +20,4 @@
 30 день - Завершение курса новичка (mini_project.py)
 31 день - Повторение из курса новичка(repetition.py)
 32 день - Повторение из курса новичка(repetition.py)
+33 день - Изучение типа данных bool и NoneType (data_types_bool.py)
