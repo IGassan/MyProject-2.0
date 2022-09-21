@@ -49,6 +49,7 @@ for i in range(1,a + 1):
     print(lists)
 
 
+from enum import Flag
 from math import *
 from re import M
 
@@ -195,3 +196,55 @@ print('Верхняя четверть:', total1)
 print('Правая четверть:', total2)
 print('Нижняя четверть:', total3)
 print('Левая четверть:', total4)
+
+
+n = int(input())
+m = int(input())
+matrix = [[0] * m for _ in range(n)]
+for i in range(len(matrix)):
+    for  j in range(len(matrix[i])):
+        matrix[i][j] = i * j
+for i in range(len(matrix)):
+    for  j in range(len(matrix[i])):
+        print(str(matrix[i][j]).ljust(3), end=' ')
+    print()
+
+
+n = int(input())
+m = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+total = max(max(matrix, key=max))
+for i in range(len(matrix)):
+    for  j in range(len(matrix[i])):
+        if matrix[i][j] == total:
+            print(i, j)
+            break
+    if matrix[i][j] == total:
+        break
+
+
+n = int(input())
+m = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+total = input().split()
+for i in range(len(matrix)):
+    for  j in range(len(matrix[i])):
+        if j == int(total[0]):
+            matrix[i][j], matrix[i][int(total[1])] = matrix[i][int(total[1])], matrix[i][j]
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+n = int(input())
+flag = True
+matrix = [list(map(int, input().split())) for _ in range(n)]
+for i in range(len(matrix)):
+    for  j in range(len(matrix[i])):
+        if matrix[i][j] != matrix[j][i]:
+            flag = False
+if flag:
+    print('YES')
+else:
+    print('NO')
