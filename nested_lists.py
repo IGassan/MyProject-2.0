@@ -248,3 +248,87 @@ if flag:
     print('YES')
 else:
     print('NO')
+
+
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+total = [0] * n
+for i in range(len(matrix)):
+    h = matrix[i][i]
+    matrix[i][i] = matrix[n - 1 - i][i]
+    matrix[n - 1 - i][i] = h
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+matrix.reverse()
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+matrix.reverse()
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        print(matrix[j][i], end=' ')
+    print()
+
+
+xy = input()
+a = '87654321'.index(xy[1])
+b = 'abcdefgh'.index(xy[0])
+matrix = [['.'] * 8 for _ in range(8)]
+for i in range(8):
+    for j in range(8):
+        if i == int(a) and j == int(b):
+            matrix[i][j] = 'N'
+        if (int(b) - j) * (int(a) - i) == 2 or (int(b) - j) * (int(a) - i) == -2:
+            matrix[i][j] = '*'
+for i in range(8):
+    for j in range(8):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+def magic_square():
+    
+    cols = int(input())
+    matrix = []
+    sum_main_diag = 0
+    sum_semi_diag = 0
+    check = []
+
+    for i in range(cols):
+        elem = [int(num) for num in input().split()]
+        matrix.append(elem)
+
+    for i in range(cols):
+        check += matrix[i]
+
+    for i in range(1, len(check) + 1):
+        if i not in check:
+            return print("NO")
+
+    for i in range(cols):
+        sum_main_diag += matrix[i][i]
+        sum_semi_diag += matrix[i][cols - 1 - i]
+
+    for i in range(cols):
+        sum_cols = 0
+        sum_rows = 0
+        for j in range(cols):
+            sum_cols += matrix[i][j]
+            sum_rows += matrix[j][i]
+        if not sum_cols == sum_rows == sum_main_diag == sum_semi_diag:
+            return print("NO")
+    else:
+        return print("YES")
+
+magic_square()
