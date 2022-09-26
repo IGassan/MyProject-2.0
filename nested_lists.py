@@ -332,3 +332,72 @@ def magic_square():
         return print("YES")
 
 magic_square()
+
+
+a = input().split()
+n = int(a[0])
+m = int(a[1])
+matrix = [[0]* m for i in range(n)]
+for i in range(n):
+    for j in range(m):
+        if (i + j) % 2 != 0:
+            matrix[i][j] = '.'
+        else:
+            matrix[i][j] = '*'
+for i in range(n):
+    for j in range(m):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+n = int(input())
+matrix = [[0] * n for i in range(n)]
+for i in range(n):
+    for j in range(n):
+        if i == n - j - 1:
+            matrix[i][j] = 1
+        elif i > n - j - 1:
+            matrix[i][j] = 2
+for i in range(n):
+    for j in range(n):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+
+a = input().split()
+n = int(a[0])
+m = int(a[1])
+total = 0
+matrix = [[0] * m for i in range(n)]
+for i in range(n):
+    for j in range(m):
+        total += 1
+        matrix[i][j] = total
+        print(str(matrix[i][j]).ljust(3), end=' ')
+    print()
+
+
+a = input().split()
+n = int(a[0])
+m = int(a[1])
+matrix = [[0] * m for i in range(n)]
+for i in range(n):
+    for j in range(m):
+        matrix[i][j] = i + j * n + 1
+for i in range(n):
+    for j in range(m):
+        print(str(matrix[i][j]).ljust(3), end=' ')
+    print()
+
+
+n = int(input())
+matrix = [[0] * n for i in range(n)]
+for i in range(n):
+    for j in range(n):
+        if i == n - j - 1 or i == j:
+            matrix[i][j] = 1
+for i in range(n):
+    for j in range(n):
+        print(matrix[i][j], end=' ')
+    print()
