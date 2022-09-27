@@ -401,3 +401,78 @@ for i in range(n):
     for j in range(n):
         print(matrix[i][j], end=' ')
     print()
+
+
+n = int(input())
+matrix = [[0] * n for i in range(n)]
+for i in range(n):
+    for j in range(n):
+        if (i <= j and i <= n - 1 - j) or (i >= j and i >= n - 1 - j):
+            matrix[i][j] = 1
+for i in range(n):
+    for j in range(n):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+a = input().split()
+n = int(a[0])
+m = int(a[1])
+matrix = [[0] * m for i in range(n)]
+for i in range(n):
+    for j in range(m):
+        matrix[i][j] = (i + j) % m + 1
+for i in range(n):
+    for j in range(m):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+a = input().split()
+n = int(a[0])
+m = int(a[1])
+total = 0
+matrix = [[0] * m for i in range(n)]
+for i in range(n):
+    for j in range(m):
+        total += 1
+        matrix[i][j] = total
+for i in range(n):
+    if i % 2 != 0:
+        matrix[i].reverse()
+    for j in range(m):
+        print(str(matrix[i][j]).ljust(3), end=' ')
+    print()
+
+
+a = input().split()
+n = int(a[0])
+m = int(a[1])
+total = 0
+matrix = [[0] * m for i in range(n)]
+for j in range(m + n - 1):
+    for i in range(n):
+        if j - i in range(m):
+            total += 1
+            matrix[i][j - i] = total
+for i in range(n):
+    for j in range(m):
+        print(str(matrix[i][j]).ljust(3), end=' ')
+    print()
+
+
+n, m = map(int, input().split())
+a = [[0] * m for _ in range(n)]
+dr, dc, r, c = 0, 1, 0, 0
+
+for cnt in range(1, n * m + 1):
+    a[r][c] = cnt
+    
+    if a[(r + dr) % n][(c + dc) % m]:
+        dr, dc = dc, -dr
+
+    r += dr
+    c += dc    
+    
+for row in a:
+    print(*(f'{e:<3}' for e in row), sep='')
