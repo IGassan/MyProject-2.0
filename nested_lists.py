@@ -476,3 +476,47 @@ for cnt in range(1, n * m + 1):
     
 for row in a:
     print(*(f'{e:<3}' for e in row), sep='')
+
+
+a = input().split()
+n = int(a[0])
+m = int(a[1])
+matrix1 = [list(map(int, input().split())) for _ in range(n)]
+box = input()
+matrix2 = [list(map(int, input().split())) for _ in range(n)]
+matrix3 = [[0] * m for i in range(n)]
+for i in range(n):
+    for j in range(m):
+        matrix3[i][j] = matrix1[i][j] + matrix2[i][j]
+for i in range(n):
+    for j in range(m):
+        print(matrix3[i][j], end=' ')
+    print()
+
+
+n, m = [int(i) for i in input().split()]
+matrixA = [[int(i) for i in input().split()] for _ in range(n)]
+input()
+m, k = [int(i) for i in input().split()]
+matrixB = [[int(i) for i in input().split()] for _ in range(m)]
+matrixC = [[0] * k for _ in range(n)]
+
+for i in range(n):
+    for j in range(k):
+        for q in range(m):
+            matrixC[i][j] += matrixA[i][q] * matrixB[q][j]
+
+for row in matrixC:
+    print(*row)
+
+
+n = int(input())
+m1 = [[int(j) for j in input().split()] for i in range(n)]
+m = int(input())
+res = m1
+
+for l in range(m-1):
+    res = [[sum([res[i][p] * m1[p][j] for p in range(n)]) for j in range(n)] for i in range(n)]
+
+for r in res:
+    print(*r)
