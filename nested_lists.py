@@ -520,3 +520,94 @@ for l in range(m-1):
 
 for r in res:
     print(*r)
+
+
+a = input().split()
+n = int(input())
+total = list()
+for i in range(n):
+    total.append(a[i::n])
+print(total)
+
+
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+total = -10000
+for i in range(len(matrix)):
+    for  j in range(len(matrix[i])):
+        if i >=n - 1 - j:
+            if matrix[i][j] > total:
+                total = matrix[i][j]
+print(total)
+
+
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        print(matrix[j][i], end=' ')
+    print()
+
+
+n = int(input())
+matrix = [['.'] * n for _ in range(n)]
+for i in range(n):
+    matrix[i][i] = '*'
+    matrix[i][n-i-1] = '*'
+    matrix[n//2][i] = '*'
+    matrix[i][n//2] = '*'
+for i in range(n):
+    for j in range(n):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+n = int(input())
+flag = True
+matrix = [list(map(int, input().split())) for _ in range(n)]
+matrix.reverse()
+for i in range(len(matrix)):
+    for  j in range(len(matrix[i])):
+        if matrix[i][j] != matrix[j][i]:
+            flag = False
+if flag:
+    print('YES')
+else:
+    print('NO')
+
+
+n = int(input())
+matrix = [[int(x) for x in input().split()] for _ in range(n)]
+for i in range(n):
+    if sorted(matrix[i]) != list(range(1, n + 1)) or sorted([matrix[j][i] for j in range(n)]) != list(range(1, n + 1)):
+        print('NO')
+        break
+else:
+    print('YES')
+
+
+xy = input()
+a = '87654321'.index(xy[1])
+b = 'abcdefgh'.index(xy[0])
+matrix = [['.'] * 8 for _ in range(8)]
+for i in range(8):
+    for j in range(8):
+        if (abs(int(a) - i) == abs(int(b) - j)) or i == int(a) or j == int(b):
+            matrix[i][j] = '*'
+        if i == int(a) and j == int(b):
+            matrix[i][j] = 'Q'
+for i in range(8):
+    for j in range(8):
+        print(matrix[i][j], end=' ')
+    print()
+
+
+n = int(input())
+matrix = [[0] * n for i in range(n)]
+for i in range(n):
+    for j in range(n):
+        matrix[i][j] = abs(i - j)
+for i in range(n):
+    for j in range(n):
+        print(matrix[i][j], end=' ')
+    print()
