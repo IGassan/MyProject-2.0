@@ -72,3 +72,30 @@ if n1 == n2 == n3:
     print('YES')
 else:
     print('NO')
+
+
+n = int(input())
+for i in range(n):
+    print(len(set(input().lower())))
+
+
+n = int(input())
+total = set()
+for i in range(n):
+    total.update(input().lower())
+print(len(total))
+
+
+print(len(set(x.strip('.,;:-?!') for x in input().lower().split())))
+
+
+total = list(input().split())
+for i in range(len(total)):
+    total[i] = int(total[i])
+tot = set()
+for i in total:
+    if i not in tot:
+        tot.add(i)
+        print('NO')
+    elif i in tot:
+        print('YES')
