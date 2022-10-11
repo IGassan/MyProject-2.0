@@ -99,3 +99,31 @@ for i in total:
         print('NO')
     elif i in tot:
         print('YES')
+
+    
+a, b = set(input().split()), set(input().split())
+print(len(a.intersection(b)))
+
+
+a, b = set(int(i) for i in input().split()), set(int(i) for i in input().split())
+c = sorted(a.intersection(b))
+print(*c)
+
+
+a, b = set(int(i) for i in input().split()), set(int(i) for i in input().split())
+c = sorted(a.difference(b))
+print(*c)
+
+
+n = int(input())
+a1 = set(input().split())
+for i in range(n - 1):
+    a1.intersection_update(input())
+print(a1)
+
+
+n = int(input())
+a1 = set(input())
+for i in range(n - 1):
+    a1.intersection_update(set(input()))
+print(*sorted(a1))
