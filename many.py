@@ -127,3 +127,39 @@ a1 = set(input())
 for i in range(n - 1):
     a1.intersection_update(set(input()))
 print(*sorted(a1))
+
+
+a = set(input())
+b = set(input())
+if a.isdisjoint(b):
+    print('NO')
+else:
+    print('YES')
+
+
+set1, set2 = set(input()), set(input()) 
+print('YES' if set2.issubset(set1) else 'NO')
+
+
+set1, set2, set3 = set(map(int, input().split())), set(map(int, input().split())), set(map(int, input().split()))
+total = set1 & set2
+total = total - set3
+print(*sorted(total, reverse=True))
+
+
+set1, set2, set3 = set(map(int, input().split())), set(map(int, input().split())), set(map(int, input().split()))
+total = set1.intersection(set2, set3)
+totol = set1.union(set2, set3)
+print(*sorted(totol.difference(total)))
+
+
+set1, set2, set3 = set(map(int, input().split())), set(map(int, input().split())), set(map(int, input().split()))
+total = set1.union(set2)
+totol = set3.difference(total)
+print(*sorted(totol, reverse=True))
+
+
+set1, set2, set3 = set(map(int, input().split())), set(map(int, input().split())), set(map(int, input().split()))
+total = set1.union(set2, set3)
+totol = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+print(*sorted(totol.difference(total)))
