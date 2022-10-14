@@ -194,3 +194,107 @@ print(*sorted(myset))
 files = ['python.png', 'qwerty.py', 'stepik.png', 'beegeek.org', 'windows.pnp', 'pen.txt', 'phone.py', 'book.txT', 'board.pNg', 'keyBoard.jpg', 'Python.PNg', 'apple.jpeg', 'png.png', 'input.tXt', 'split.pop', 'solution.Py', 'stepik.org', 'kotlin.ko', 'github.git']
 myset = {i.lower() for i in files if i[-4:].lower() == '.png'}
 print(*sorted(myset))
+
+
+set1 = {'a', 't', 'f', 'p'}
+set2 = {'a', 't', 'f'}
+print(set1 - set2)
+
+
+n, m, k, p = int(input()), int(input()), int(input()), int(input())
+print(n - m - k + p)
+
+n = input().split()
+total = set(n)
+print(len(n) - len(total))
+
+
+n = int(input())
+total = {input() for _ in range(n)}
+m = input()
+if m in total:
+    print('REPEAT')
+else:
+    print('OK')
+
+
+m = int(input())
+n = int(input())
+totalm = {input() for _ in range(m)}
+totaln = (input() for _ in range(n))
+for i in totaln:
+    if i in totalm:
+        print('YES')
+    else:
+        print('NO')
+
+
+m = set(input().split())
+n = set(input().split())
+total = n.intersection(m)
+if len(total) > 0:
+    print(*sorted(total, reverse=True, key=int))
+else:
+    print('BAD DAY')
+
+
+m = {int(i) for i in input().split()}
+n = {int(i) for i in input().split()}
+if n == m:
+    print('YES')
+else:
+    print('NO')
+
+
+m = int(input())
+n = int(input())
+totalm = {input() for _ in range(m)}
+totaln = {input() for _ in range(n)}
+total = totalm - totaln
+print(len(total))
+
+
+m = int(input())
+n = int(input())
+totalm = {input() for _ in range(m)}
+totaln = {input() for _ in range(n)}
+total = totalm ^ totaln
+if len(total) > 0:
+    print(len(total))
+else:
+    print('NO')
+
+
+m = set(input().split())
+n = set(input().split())
+total = m.union(n)
+print(*sorted(total))
+
+
+m, n = int(input()), int(input())
+set1 = set()
+set2 = set()
+for i in range(m + n):
+    a = input()
+    if a in set1:
+        set2.add(a)
+    else:
+        set1.add(a)
+print(len(set1 ^ set2) if len(set1 ^ set2) > 0 else "NO")
+
+
+m = int(input())
+set1 = set()
+for i in range(m):
+    n = int(input())
+    set2 = set()
+    if i == 0:
+        for j in range(n):
+            set1.add(input())
+    else:
+        for j in range(n):
+            set2.add(input())
+            
+        set1.intersection_update(set2)
+        
+print(*sorted(set1), sep='\n')
