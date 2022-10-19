@@ -98,3 +98,39 @@ for i in n:
 print(*totol)
 
 
+result = {}
+for i in range(1, 16):
+    result[i] = i ** 2
+
+
+dict1 = {'a': 100, 'z': 333, 'b': 200, 'c': 300, 'd': 45, 'e': 98, 't': 76, 'q': 34, 'f': 90, 'm': 230}
+dict2 = {'a': 300, 'b': 200, 'd': 400, 't': 777, 'c': 12, 'p': 123, 'w': 111, 'z': 666}
+
+result = {}
+result.update(dict1)
+for i, j in dict2.items():
+    result[i] = result.get(i, 0) + j
+
+
+text = 'footballcyberpunkextraterritorialityconversationalistblockophthalmoscopicinterdependencemamauserfff'
+
+result = {}
+for i in text:
+    result[i] = result.get(i, 0) + 1
+
+
+s = 'orange strawberry barley gooseberry apple apricot barley currant orange melon pomegranate banana banana orange barley apricot plum grapefruit banana quince strawberry barley grapefruit banana grapes melon strawberry apricot currant currant gooseberry raspberry apricot currant orange lime quince grapefruit barley banana melon pomegranate barley banana orange barley apricot plum banana quince lime grapefruit strawberry gooseberry apple barley apricot currant orange melon pomegranate banana banana orange apricot barley plum banana grapefruit banana quince currant orange melon pomegranate barley plum banana quince barley lime grapefruit pomegranate barley'
+result1 = {}
+result2 = {}
+numbers = [c for c in s.split()]
+for num in numbers:
+    result1[num] = result1.get(num, 0) + 1
+mx = (max(result1.values()))
+for key, value in result1.items():
+    if value == mx:
+        result2[key] = result2.get(key, value)
+mx2 = (min(result2))
+print(mx2)
+
+s = set(s.split())
+print(s)
