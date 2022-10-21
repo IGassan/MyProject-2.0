@@ -134,3 +134,54 @@ print(mx2)
 
 s = set(s.split())
 print(s)
+
+
+pets = [('Hatiko', 'Parker', 'Wilson', 50),
+        ('Rusty', 'Josh', 'King', 25),
+        ('Fido', 'John', 'Smith', 28),
+        ('Butch', 'Jake', 'Smirnoff', 18),
+        ('Odi', 'Emma', 'Wright', 18),
+        ('Balto', 'Josh', 'King', 25),
+        ('Barry', 'Josh', 'King', 25),
+        ('Snape', 'Hannah', 'Taylor', 40),
+        ('Horry', 'Martha', 'Robinson', 73),
+        ('Giro', 'Alex', 'Martinez', 65),
+        ('Zooma', 'Simon', 'Nevel', 32),
+        ('Lassie', 'Josh', 'King', 25),
+        ('Chase', 'Martha', 'Robinson', 73),
+        ('Ace', 'Martha', 'Williams', 38),
+        ('Rocky', 'Simon', 'Nevel', 32)]
+
+result = {}
+for name in pets:
+    result[name[1:4]] = result.get((name[1:4]), []) + [name[0]]
+print(result)
+
+
+lst = [word.strip('.,!?:;-') for word in input().lower().split()]
+result = {}
+for word in lst:
+    result[word] = result.get(word, 0) + 1
+for key, values in sorted(result.items()):
+    if values == min(result.values()):
+        print(key)
+        break
+
+
+lst = input().split()
+res = {}
+for c in lst:
+    if c in res:
+        print(f'{c}_{res[c]}', end=' ')
+    else:
+        print(c, end=' ')
+    res[c] = res.get(c, 0) + 1
+
+
+spisok = {tuple(input().split(':')) for _ in range(int(input()))}
+slova = [input().lower() for _ in range(int(input()))]
+for stroka in slova:
+    if stroka in spisok.values().lower():
+        print(spisok[stroka])
+    else:
+        print('Не найдено')
