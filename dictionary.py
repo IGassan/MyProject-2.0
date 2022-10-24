@@ -178,10 +178,63 @@ for c in lst:
     res[c] = res.get(c, 0) + 1
 
 
-spisok = {tuple(input().split(':')) for _ in range(int(input()))}
-slova = [input().lower() for _ in range(int(input()))]
-for stroka in slova:
-    if stroka in spisok.values().lower():
-        print(spisok[stroka])
-    else:
-        print('Не найдено')
+n = int(input())
+keys = []
+values = []
+for i in range(n):
+    a = input().split(':')
+    keys.append(a[0].lower())
+    values.append(a[1].strip())
+res = dict(zip(keys, values))
+m = int(input())
+for i in range(m):
+    d = input().lower()
+    final = res.get(d, 'Не найдено')
+    print(final)
+
+
+word1 = {}
+word2 = {}
+for i in input():
+    word1[i] = word1.get(i, 0) + 1
+for i in input():
+    word2[i] = word2.get(i, 0) + 1
+if word1 == word2:
+    print('YES')
+else:
+    print('NO')
+
+
+word1 = {}
+word2 = {}
+for i in input().lower():
+    if i not in '.,!?:;- ':
+        word1[i] = word1.get(i, 0) + 1
+for i in input().lower():
+    if i not in '.,!?:;- ':
+        word2[i] = word2.get(i, 0) + 1
+if word1 == word2:
+    print('YES')
+else:
+    print('NO')
+
+
+mydict = {}
+for _ in range(int(input())):
+    key, value = input().split(': ')
+    mydict[key] = value
+total = input()
+for key, value in my_dict.items():
+    if key == total:
+        print(value)
+    elif value == total:
+        print(key)
+
+
+mydict = {}
+for _ in range(int(input())):
+    key, *value = input().split()
+    my_dict[key] = value
+print(mydict)
+m = int(input())
+for i in range(m):
