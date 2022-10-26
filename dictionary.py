@@ -1,3 +1,6 @@
+from time import pthread_getcpuclockid
+
+
 my_dict = {1.12: 'aa', 67.9: 45, 3.11: 'ccc', 7.9: 'dd', 9.2: 'ee', 7.1: 'ff', 0.12: 'qq', 1.91: 'aa', 10.12: [1, 2, 3], 99.0: {9, 0, 1}}
 print(min(my_dict) + max(my_dict))
 
@@ -234,7 +237,21 @@ for key, value in my_dict.items():
 mydict = {}
 for _ in range(int(input())):
     key, *value = input().split()
-    my_dict[key] = value
-print(mydict)
+    mydict[key] = value
 m = int(input())
 for i in range(m):
+    y = input()
+    for key, value in mydict.items():
+        if y in value:
+            print(key)
+
+
+mydict = {}
+for _ in range(int(input())):
+    key, value = input().split()
+    mydict[key] = value
+m = int(input())
+for i in range(m):
+    d = input().lower()
+    final = mydict.get(d, 'абонент не найден')
+    print(final)
