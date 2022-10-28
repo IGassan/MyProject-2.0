@@ -246,12 +246,22 @@ for i in range(m):
             print(key)
 
 
-mydict = {}
+d = {}
+for i in range(int(input())):
+    p = input().lower().split()
+    d[p[1]] = d.get(p[1],[]) + [p[0]]
+for i in range(int(input())):
+    p = input().lower()
+    print(*d.get(p, ['абонент не найден']))
+    
+
+d = {}
+e = {}
+a = input()
+for i in a:
+    d[i] = d.get(i, 0) + 1
 for _ in range(int(input())):
-    key, value = input().split()
-    mydict[key] = value
-m = int(input())
-for i in range(m):
-    d = input().lower()
-    final = mydict.get(d, 'абонент не найден')
-    print(final)
+    key, value = input().split(': ')
+    e[int(value)] = key
+for i in a:
+    print(e[d[i]], end='')
