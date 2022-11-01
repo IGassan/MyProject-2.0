@@ -1,3 +1,4 @@
+from os import sep
 from time import pthread_getcpuclockid
 
 
@@ -313,3 +314,91 @@ student_ids = ['S001', 'S002', 'S003', 'S004', 'S005', 'S006', 'S007', 'S008', '
 student_names = ['Camila Rodriguez', 'Juan Cruz', 'Dan Richards', 'Sam Boyle', 'Batista Cesare', 'Francesco Totti', 'Khalid Hussain', 'Ethan Hawke', 'David Bowman', 'James Milner', 'Michael Owen', 'Gary Oldman', 'Tom Hardy'] 
 student_grades = [86, 98, 89, 92, 45, 67, 89, 90, 100, 98, 10, 96, 93]
 result = [{student_ids:{student_names: student_grades}} for student_ids, student_names, student_grades in zip(student_ids, student_names, student_grades)]
+
+
+# Итоговая работа
+
+
+my_dict = {'C1': [10, 20, 30, 7, 6, 23, 90], 'C2': [20, 30, 40, 1, 2, 3, 90, 12], 'C3': [12, 34, 20, 21], 'C4': [22, 54, 209, 21, 7], 'C5': [2, 4, 29, 21, 19], 'C6': [4, 6, 7, 10, 55], 'C7': [4, 8, 12, 23, 42], 'C8': [3, 14, 15, 26, 48], 'C9': [2, 7, 18, 28, 18, 28]}
+my_dict = {key:[i for i in value if i <= 20] for key, value in my_dict.items()}
+
+
+emails = {'nosu.edu': ['timyr', 'joseph', 'svetlana.gaeva', 'larisa.mamuk'], 
+          'gmail.com': ['ruslan.chaika', 'rustam.mini', 'stepik-best'], 
+          'msu.edu': ['apple.fruit', 'beegeek', 'beegeek.school'], 
+          'yandex.ru': ['surface', 'google'],
+          'hse.edu': ['tomas-henders', 'cream.soda', 'zivert'],
+          'mail.ru': ['angel.down', 'joanne', 'the.fame.moster']}
+emails = sorted({i + '@' + k for k, v in emails.items() for i in v})
+print(*emails)
+
+
+chip = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
+print(*[chip[key] for key in input()], sep='')
+
+
+word1 = {}
+for i in input().split():
+    word1[i] = word1.get(i, 0) + 1
+    print(word1[i], end=' ')
+
+
+n = input()
+d = {
+    1: "AEILNORSTU",
+    2: "DG",
+    3: "BCMP",
+    4: "FHVWY",
+    5: "K",
+    8: "JX",
+    10: "QZ"
+}
+total = 0
+for i in n:
+    for k, v in d.items():
+        if i in v:
+            total += k
+print(total)
+
+
+def build_query_string(params):
+    total = []
+    for key, value in params.items():
+        total.append(key + '=' + str(value))
+    s = '&'.join(sorted(total))
+    return s
+
+
+def merge(values):
+    res = {}
+    for d in values:
+        for k, v in d.items():
+            res.setdefault(k, set()).add(v)
+    return res
+
+
+transform = {'execute': 'X', 'write': 'W', 'read': 'R'}
+mydict = {}
+
+for _ in range(int(input())):
+    name, *operations = input().split()
+    mydict[name] = operations
+    
+for _ in range(int(input())):
+    operation, name = input().split()
+    if transform[operation] in mydict[name]:
+        print('OK')
+    else:
+        print('Access denied')
+
+data = {}
+
+for _ in range(int(input())):
+    name, product, count = input().split()
+    data.setdefault(name, {})
+    data[name][product] = data[name].get(product, 0) + int(count)
+    
+for person, products in sorted(data.items()):
+    print(f'{person}:')
+    for product, count in sorted(products.items()):
+        print(product, count)
