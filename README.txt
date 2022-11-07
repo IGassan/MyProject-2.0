@@ -50,3 +50,4 @@
 51 день - Итоговая работа по словарям(dictionary.py)
 52 день - Изучение модуля random(modul_ran_str.py)
 53 день - Продолжение изучения модуля random(modul_ran_str.py)
+54 день - Продолжение изучения модуля random, изучение модуля fractions(modul_ran_str.py, modul_dec_fract.py)

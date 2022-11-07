@@ -125,3 +125,29 @@ def generate_passwords(count, length):
 
 n, m = int(input()), int(input())
 print(*generate_passwords(n, m), sep='\n')
+
+
+import random
+
+n = 10**6 
+k = 0
+s0 = 16
+for _ in range(n):
+    x = random.uniform(-2, 2)
+    y = random.uniform(-2, 2)
+    if x**3 + y**4 + 2 >= 0 and 3 * x + y**2 <= 2:
+        k += 1
+print((k / n) * s0)
+
+
+import random
+
+n = 10**6 
+k = 0
+s0 = 4
+for _ in range(n):
+    x = random.uniform(-2, 2)
+    y = random.uniform(-2, 2)
+    if x**2 + y**2 <= 1:
+        k += 1
+print((k / n) * s0)
