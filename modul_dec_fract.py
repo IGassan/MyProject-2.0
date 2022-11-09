@@ -78,3 +78,26 @@ from math import factorial
 
 total = [Fraction(1, factorial(i)) for i in range(1, int(input()) + 1)]
 print(sum(total))
+
+
+from fractions import Fraction as F
+from math import gcd
+
+n = int(input())
+a = n // 2
+b = n - a
+while gcd(a, b) != 1:
+    a -= 1
+    b += 1
+print(F(a, b))
+
+
+from fractions import Fraction
+
+total = set()
+n = int(input())
+for i in range(1, n + 1):
+    for j in range(1, n):
+        if Fraction(j, i) < 1:
+            total.add(Fraction(j, i))
+print(*sorted(total), sep='\n')

@@ -51,4 +51,5 @@
 52 день - Изучение модуля random(modul_ran_str.py)
 53 день - Продолжение изучения модуля random(modul_ran_str.py)
 54 день - Продолжение изучения модуля random, изучение модуля fractions(modul_ran_str.py, modul_dec_fract.py)
-53 день - Продолжение изучения модуля fractions(modul_ran_str.py, modul_dec_fract.py)
+53 день - Продолжение изучения модуля fractions(modul_dec_fract.py)
+54 день - Продолжение изучения модуля fractions(modul_dec_fract.py)
