@@ -153,3 +153,87 @@ def square(side):
 
 for i in range(40):
     square(5 + (i * 5))
+
+
+import turtle
+
+def sharik(numb):
+    turtle.pensize(15)
+    for _ in range(numb):
+        turtle.dot()
+        turtle.penup()
+        turtle.forward(50)
+        turtle.pendown()
+
+sharik(11)
+
+
+import turtle
+
+def rectangle(width, height):
+  for _ in range(4):
+    turtle.dot()
+    turtle.forward(width)
+    turtle.left(90)
+    width, height = height, width
+
+width = int(input())
+height = int(input())
+rectangle(width, height)
+
+
+import turtle
+
+turtle.shape('turtle')
+
+def line(width):
+    turtle.penup()
+    turtle.forward(width)
+    turtle.pendown()
+    turtle.stamp()
+    turtle.penup()
+    turtle.backward(width)
+turtle.stamp()
+
+side = int(input())
+for i in range(10):
+    turtle.setheading(36 * i)
+    line(side)
+
+
+import turtle
+
+def turtle_clock(turtles):
+  turtle.Screen().bgcolor('skyblue')
+  turtle.pensize(5)
+  turtle.penup()
+  turtle.shape('turtle')
+  turtle.stamp()
+  for _ in range(turtles):
+    turtle.forward(95)
+    turtle.pendown()
+    turtle.forward(15)
+    turtle.penup()
+    turtle.forward(20)
+    turtle.stamp()
+    turtle.backward(130)
+    turtle.left(360 / turtles)
+    
+turtle_clock(12)
+
+
+import turtle
+colors=['red', 'blue', 'yellow', 'green', 'purple', 'orange']
+s=1
+n=5
+for i in range(8):
+  for j in colors:
+    turtle.pensize(s)
+    turtle.pencolor(j)
+    turtle.forward(n)
+    turtle.left(45)
+    n+=3
+  s+=2
+
+
+  
