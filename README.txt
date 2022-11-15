@@ -56,3 +56,4 @@
 55 день - Продолжение изучения модуля fractions(modul_dec_fract.py)
 56 день - Изучение модуля turtle(modul_turtle.py)
 56 день - Продолжение изучения модуля turtle(modul_turtle.py)
+57 день - Продолжение изучения модуля turtle(modul_turtle.py)

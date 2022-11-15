@@ -236,4 +236,98 @@ for i in range(8):
   s+=2
 
 
+import turtle
+
+def shalom(num):
+  for _ in '123':
+    turtle.forward(num)
+    turtle.left(120)
+  turtle.forward(num / 3)
+  turtle.left(120)
+  turtle.forward(num / 3 * 2)
+  turtle.right(120)
+  for _ in '123':
+    turtle.forward(num)
+    turtle.right(120)
   
+shalom(100)
+
+import turtle as t
+
+t.color('green')
+
+for i in range(-200, 200, 40):
+    t.goto(i, -200)
+    t.dot(10, 'blue')
+    t.goto(0, 0)
+    
+t.color('red')
+t.dot(15)  
+
+
+import turtle
+
+r = 50
+pensize = 12
+turtle.Screen().setup(600, 1000)
+turtle.pensize(pensize)
+
+points = {1: {"pos": (0, 0),      "color": "cyan"},
+          3: {"pos": (r * 2, 0),  "color": "black"},
+          4: {"pos": (r * 4, 0),  "color": "red"},
+          5: {"pos": (r, -r),     "color": "yellow"},
+          2: {"pos": (r * 3, -r), "color": "chartreuse"}}
+             
+for i in range(1, 6):
+  turtle.penup()
+  turtle.pencolor(points[i]["color"])
+  turtle.goto(points[i]["pos"])
+  turtle.pendown()
+  turtle.circle(r - pensize / 2)
+
+
+from turtle import *
+
+def s(x): 
+  down()
+  circle(x)
+  up()
+  
+Screen().setup(500, 500), speed(10), pensize(1.2) 
+s(15), rt(90), down(), fd(90), up()  
+goto(-88, -44), s(88 )
+goto(-150, 17), s (150) 
+goto(-90, 40), begin_fill(), s(15), end_fill() 
+goto(60, 40), begin_fill(), s(15), end_fill() 
+goto(-175, 150), s (40) 
+goto(95, 150), s (40)
+
+
+import turtle as t
+import random as r
+t.speed(0)
+def ray(n):  
+  t.left(45)
+  for _ in range(3):
+    t.forward(n)
+    t.backward(n)
+    t.right(45)
+  t.left(90)
+  t.forward(n)
+  
+def snow(n):
+  for _ in range(8):
+    for _ in range(4):
+      ray(n)
+    t.backward(4*n)
+    t.right(45)
+
+t.Screen().bgcolor('lightblue')
+for _ in range(int(input())):
+    t.Screen().setup(400, 400)
+    t.penup()
+    t.goto(r.randint(50, 300), r.randint(50, 300))
+    t.pendown()
+    #t.colormode(255)    
+    t.pencolor(r.randint(0, 256), r.randint(0, 256), r.randint(0, 256))
+    snow(r.randint(10, 50))
