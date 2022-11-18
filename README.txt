@@ -58,3 +58,4 @@
 56 день - Продолжение изучения модуля turtle(modul_turtle.py)
 57 день - Продолжение изучения модуля turtle(modul_turtle.py)
 58 день - Продолжение изучения модуля turtle(modul_turtle.py)
+59 день - Изучение функций(functions_2.py)
