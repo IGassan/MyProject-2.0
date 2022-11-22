@@ -74,20 +74,48 @@ numbers.sort(key=total)
 print(numbers)
 
 
-def name(total):
-    return total[0]
-
-def age(total):
-    return total[1]
-
-def height(total):
-    return total[2]
-
-def weight(total):
-    return total[3]
+def total(numb):
+    return numb[answer - 1]
 
 athletes = [('Дима', 10, 130, 35), ('Тимур', 11, 135, 39), ('Руслан', 9, 140, 33), ('Рустам', 10, 128, 30), ('Амир', 16, 170, 70), ('Рома', 16, 188, 100), ('Матвей', 17, 168, 68), ('Петя', 15, 190, 90)]
-athlet = {1: name, 2: age, 3: height, 4: weight}
-answer = int(input)
-athletes.sort(key=athlet[answer])
-print(athletes)
+answer = int(input())
+athletes.sort(key=total)
+for i in athletes:
+    print(*i)
+
+
+from math import sin
+
+def kvad(n):
+    return n**2
+
+def cub(n):
+    return n**3
+
+def sq(n):
+    return n**0.5
+
+def modu(n):
+    return abs(n)
+
+def sinu(n):
+    return sin(n)
+
+n = int(input())
+mod = input()
+func = {'квадрат': kvad, 'куб': cub, 'корень': sq, 'модуль': modu, 'синус': sinu}
+func[mod](n)
+
+
+n = input().split()
+
+def func(number):
+    sum = 0
+    number = int(number)
+    while number > 0:
+        sum = number % 10
+        number //= 10
+    
+    return sum
+
+print(sorted(n, key=func))
