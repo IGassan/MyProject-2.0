@@ -113,9 +113,44 @@ def func(number):
     sum = 0
     number = int(number)
     while number > 0:
-        sum = number % 10
+        sum += number % 10
         number //= 10
     
     return sum
 
 print(sorted(n, key=func))
+
+
+n = input().split()
+
+def funct(number):
+    number = int(number)
+    return number
+
+def func(number):
+    sum = 0
+    number = int(number)
+    while number > 0:
+        sum += number % 10
+        number //= 10
+    
+    return sum
+
+n.sort(key=funct)
+n.sort(key=func)
+print(*n)
+
+
+def map(function, items):
+    result = []
+    for item in items:
+        result.append(function(item))
+    return result
+
+def krug(x):
+    return round(x, 2)
+
+numbers = [3.56773, 5.57668, 4.00914, 56.24241, 9.01344, 32.12013, 23.22222, 90.09873, 45.45, 314.1528, 2.71828, 1.41546]
+
+krugi = map(krug, numbers)
+print(*krugi, sep='\n')
