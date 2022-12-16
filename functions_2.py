@@ -348,3 +348,21 @@ abscissas = list(map(float, input().split()))
 ordinates = list(map(float, input().split()))
 applicates = list(map(float, input().split()))
 print(all(list(map(lambda x,y,z: x**2+y**2+z**2<=4, abscissas,ordinates,applicates))))
+
+
+a = list(input().split('.'))
+print(all(list(map(lambda x: x if x.isdigit() and 0 <= int(x) <= 255 else False, a))))
+
+
+for i in range(int(input()), int(input()) + 1):
+    if all(map(lambda x: int(x) and not i % int(x), list(str(i)))):
+        print(i, end=' ')
+
+
+s = input()
+print('YES' if all((any(i.isupper() for i in s), 
+                    any(i.islower() for i in s), 
+                    any(i.isdigit() for i in s), 
+                    len(s) >= 7)) else 'NO')
+
+
