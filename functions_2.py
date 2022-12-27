@@ -366,3 +366,122 @@ print('YES' if all((any(i.isupper() for i in s),
                     len(s) >= 7)) else 'NO')
 
 
+a = int(input())
+mydict = []
+for i in range(a):
+    for _ in range(int(input())):
+        key, value = input().split()
+        mydict.append(value)
+tot = 0
+for i in mydict:
+    if i == '5':
+        tot += 1
+print('YES' if a < tot or (a == 1 and mydict == ['5'])  else 'NO')
+
+
+n = int(input())
+l = [[int(input().split()[1]) for i in range(int(input()))] for i in range(n)]
+
+print('YES' if all(map(lambda x: 5 in x, l)) else 'NO')
+
+
+# Итоговая работа
+
+
+def generate_letter(mail, name, date, time, place, teacher = 'Тимур Гуев', number = 17):
+    return f'To: {mail}\nПриветствую, {name}!\nВам назначен экзамен, который пройдет {date}, в {time}.\nПо адресу: {place}.\nЭкзамен будет проводить {teacher} в кабинете {number}.\nЖелаем удачи на экзамене!'
+
+
+def pretty_print(data, side = '-', delimiter = '|'):
+    s2 =delimiter + " "+ f' {delimiter} '.join(map(str, data)) + " " + delimiter
+    s = " "+ (len(s2)-2)* side + " "
+    print(s)
+    print(s2)
+    print(s)
+
+
+data = [['p', 'y', 't', 'h', 'o', 'n'], ['s', 't', 'e', 'p', 'i', 'k']]
+result = list(map(lambda x: '.'.join(x), data))
+print(result[1])
+
+
+result = list(filter(str.swapcase, ['a', '1', '', 'b', '2']))
+
+print(result)
+
+
+from functools import reduce
+import operator
+
+def flatten(data):
+    return reduce(operator.concat, data, [])
+
+result = flatten([[1, 2], [3, 4], [], [5]])
+
+print(result)
+
+
+def concat(*args, sep=' '):
+    return f'{sep}'.join(map(str, args))
+    
+
+from functools import reduce
+
+def product_of_odds(data):
+    return reduce(lambda x, y: x * y, filter(lambda x: x % 2, data), 1)
+
+
+words = 'the world is mine take a look what you have started'.split()
+
+print(*map(lambda x: '"' + x + '"',words))
+
+
+numbers = [18, 191, 9009, 5665, 78, 77, 45, 23, 19991, 908, 8976, 6565, 5665, 10, 1000, 908, 909, 232, 45654, 786]
+print(*filter(lambda x: str(x) != str(x)[::-1], numbers))
+
+
+numbers = [(10, -2, 3, 4), (-13, 56), (1, 9, 2), (-1, -9, -45, 32), (-1, 5, 1), (17, 0, 1), (0, 1), (3,), (39, 12), (11, -23), (10, -100, 21, 32), (3, -8), (1, 1)]
+
+sorted_numbers = sorted(numbers, key=lambda x: sum(x) / len(x), reverse = True)
+
+print(sorted_numbers)
+
+
+def call(func, *args):
+    return func(*args)
+
+
+def compose(a, b):
+    return lambda x: a(b(x))
+
+
+from operator import *
+def arithmetic_operation(operation):
+
+    def func(x, y):
+        result = {'+': add(x, y), '-': sub(x, y), '*': mul(x, y), '/': truediv(x, y)}
+        return result[operation]
+    return func
+
+
+data = input().split()
+data.sort()
+data.sort(key=lambda x: x.upper())
+print(*data)
+
+
+def gem(word):
+    return sum(map(lambda c: ord(c.upper()) - ord('A'), word)), word
+
+words = [input() for _ in range(int(input()))] 
+
+print(*sorted(words, key=gem), sep='\n')
+
+
+x = int(input())
+lst = list()
+for i in range(x):
+    y = input()
+    lst.append(y)
+lst = sorted(lst, key=lambda address: sum([int(x) * 256 ** z for x, z in zip(address.split('.'), range(3, -1, -1))]))
+print(*lst, sep='\n')
