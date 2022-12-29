@@ -485,3 +485,11 @@ for i in range(x):
     lst.append(y)
 lst = sorted(lst, key=lambda address: sum([int(x) * 256 ** z for x, z in zip(address.split('.'), range(3, -1, -1))]))
 print(*lst, sep='\n')
+
+
+n = [-1, 0, 1, 3, 4]
+flag = True
+for i in range(len(n) - 1):
+    if n[i] + 1 != n[i + 1]:
+        flag = False
+print(flag)
